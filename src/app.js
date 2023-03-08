@@ -12,7 +12,7 @@ app.get('/', (_request, response) => {
 
 app.use(express.json());
 
-app.use('/login', userRoutes.route);
+app.use('/login', userRoutes.router);
 
 // ...
 

@@ -1,4 +1,4 @@
-const validateUser = require('./validateUser');
+const { validateUser } = require('./validateUser');
 
 module.exports = {
     validateUser,

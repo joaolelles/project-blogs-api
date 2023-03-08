@@ -15,7 +15,9 @@ const postUser = async (req, res) => {
         return res.status(400).send({ message: 'Invalid fields' });
     }
 
-    const token = jwt.sign({ data: { userId: user.id } }, secret, jwtConfig);
+    const { password: _, ...userWithoutPassword } = user.dataValues;
+
+    const token = jwt.sign({ data: userWithoutPassword }, secret, jwtConfig);
 
     res.status(200).send({ token });
 };

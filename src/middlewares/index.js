@@ -1,5 +1,11 @@
-const { validateUser } = require('./validateUser');
+const { validateFieldsEmailOrPw } = require('./validateLogin');
+const { validateDisplayName } = require('./validateUserDn');
+const { validateEmail } = require('./validateUserEmail');
+const { validatePassword } = require('./validateUserPw');
 
 module.exports = {
-    validateUser,
+    validateFieldsEmailOrPw,
+    validateDisplayName,
+    validateEmail,
+    validatePassword,
 };

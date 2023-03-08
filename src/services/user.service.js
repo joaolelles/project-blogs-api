@@ -5,10 +5,8 @@ const { User } = require('../models');
 //     if (userRegistered) {
 //         return userRegistered;
 //     }
-//     if (!userRegistered) {
-//         const newUser = await User.create({ displayName, email, password, image });
-//         return newUser;
-//     }
+//     const newUser = await User.create({ displayName, email, password, image });
+//     return newUser;
 // };
 
 const userRegistered = async (email) => {

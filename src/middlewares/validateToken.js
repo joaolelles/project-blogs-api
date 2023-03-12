@@ -10,7 +10,7 @@ const authToken = (req, res, next) => {
 
     try {
         const payload = jwt.verify(authorization, secret);
-        req.user = payload;
+        req.user = { payload };
 
         return next();
     } catch (error) {

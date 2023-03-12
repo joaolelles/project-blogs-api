@@ -14,8 +14,8 @@ const postUser = async (req, res) => {
         return res.status(409).json({ message: 'User already registered' });
     }
     const user = await userService.postUser(displayName, email, password, image);
-    const { password: _, ...userWithoutPassword } = user.dataValues;
-    const token = jwt.sign({ data: userWithoutPassword }, secret, jwtConfig);
+    const newUserId = user.dataValues.id;
+    const token = jwt.sign({ data: { userId: newUserId } }, secret, jwtConfig);
 
     return res.status(201).send({ token });
 };
